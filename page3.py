@@ -19,7 +19,7 @@ class BlogPost(db.Model):
 
 @app.route("/")
 def index():
-	return render_template("qaz.html")
+	return render_template("index.html")
 
 
 @app.route("/posts", methods=["GET", "POST"])
