@@ -31,7 +31,7 @@ def posts():
 		new_post = BlogPost(title=post_title, content=post_content, author=post_author)
 		db.session.add(new_post)
 		db.session.commit()
-		return redirect("/posts")
+		return redirect("https://gasoline-alt.github.io/Gasosite/posts/")
 	else:
 		all_posts = BlogPost.query.order_by(BlogPost.date_posted).all()
 		return render_template("posts.html", posts=all_posts)
@@ -42,7 +42,7 @@ def delete(id):
 	post = BlogPost.query.get_or_404(id)
 	db.session.delete(post)
 	db.session.commit()
-	return redirect("/posts")
+	return redirect("https://gasoline-alt.github.io/Gasosite/posts/")
 
 
 @app.route("https://gasoline-alt.github.io/posts/edit/<int:id>", methods=["GET", "POST"])
@@ -53,7 +53,7 @@ def edit(id):
 		post.author = request.form["author"]
 		post.content = request.form["content"]
 		db.session.commit()
-		return redirect("/posts")
+		return redirect("https://gasoline-alt.github.io/Gasosite/posts/")
 	else:
 		return render_template("edit.html", post=post)
 
