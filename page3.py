@@ -22,7 +22,7 @@ def index():
 	return render_template("qaz.html")
 
 
-@app.route("/posts", methods=["GET", "POST"])
+@app.route("https://gasoline-alt.github.io/posts", methods=["GET", "POST"])
 def posts():
 	if request.method == "POST":
 		post_title = request.form["title"]
