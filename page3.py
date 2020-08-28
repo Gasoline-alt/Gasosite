@@ -16,13 +16,13 @@ class BlogPost(db.Model):
 	def __repr__(self):
 		return "Blog Post " + str(self.id)
 
-
-@app.route("/")
+	
+@app.route("https://gasoline-alt.github.io/Gasosite/")
 def index():
 	return render_template("index.html")
 
 
-@app.route("/posts", methods=["GET", "POST"])
+@app.route("https://gasoline-alt.github.io/Gasosite/posts/", methods=["GET", "POST"])
 def posts():
 	if request.method == "POST":
 		post_title = request.form["title"]
@@ -37,7 +37,7 @@ def posts():
 		return render_template("posts.html", posts=all_posts)
 
 
-@app.route("/posts/delete/<int:id>")
+@app.route("https://gasoline-alt.github.io/posts/delete/<int:id>")
 def delete(id):
 	post = BlogPost.query.get_or_404(id)
 	db.session.delete(post)
@@ -45,7 +45,7 @@ def delete(id):
 	return redirect("/posts")
 
 
-@app.route("/posts/edit/<int:id>", methods=["GET", "POST"])
+@app.route("https://gasoline-alt.github.io/posts/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
 	post = BlogPost.query.get_or_404(id)
 	if request.method == "POST":
