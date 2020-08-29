@@ -7,7 +7,7 @@ def index():
 	return render_template("index.html")
 
 
-@app.route('/about')
+@app.route('https://gasoline-alt.github.io/Gasosite/about')
 def about():
 	return render_template("about.html")
 
